@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\ComicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::prefix('api')->group(function () {
+//     Route::get('/authors', [AuthorController::class, 'index']);
+//     Route::get('/authors/{id}/comics', [AuthorController::class, 'authorComics']);
+// });
+
+
+// Route::group(['prefix' => 'api', 'middleware' => ['auth:api']], function(){
+//     Route::get('/authors', [AuthorController::class, 'index']);
+//     Route::get('/authors/{id}/comics', [AuthorController::class, 'authorComics']);
+// });
