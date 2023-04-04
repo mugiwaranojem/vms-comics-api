@@ -13,6 +13,6 @@ class AuthorRepository extends BaseRepository
 
     public function getAuthorComics(int $id)
     {
-    	return $this->find($id)->comics;
+        return $this->find($id)->comics;
     }
 }

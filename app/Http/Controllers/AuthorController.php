@@ -10,16 +10,16 @@ use App\Repositories\AuthorRepository;
 
 class AuthorController extends BaseController
 {
-	private AuthorRepository $authorRepository;
+    private AuthorRepository $authorRepository;
 
-	public function __construct(
-		AuthorRepository $authorRepository
-	) {
-		$this->authorRepository = $authorRepository;
-	}
+    public function __construct(
+        AuthorRepository $authorRepository
+    ) {
+        $this->authorRepository = $authorRepository;
+    }
 
     // use AuthorizesRequests, ValidatesRequests;
-	public function index(Request $request)
+    public function index(Request $request)
     {
         $results = $this->authorRepository->all();
         return response()->json($results);
@@ -27,7 +27,7 @@ class AuthorController extends BaseController
 
     public function authorComics(Request $request, int $id)
     {
-    	$results = $this->authorRepository->getAuthorComics($id);
-    	return response()->json($results);
+        $results = $this->authorRepository->getAuthorComics($id);
+        return response()->json($results);
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthorController;
-use App\Http\Controllers\ComicController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +18,9 @@ use App\Http\Controllers\ComicController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/register', [RegisterController::class, 'create']);
+Route::post('/login', [LoginController::class, 'login']);
 
 // Route::prefix('api')->group(function () {
 //     Route::get('/authors', [AuthorController::class, 'index']);
